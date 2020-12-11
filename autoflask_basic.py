@@ -202,6 +202,8 @@ with open(ACTIVATE_VENV) as f:
     apppy += '@app.route("/data")\n'
     apppy += 'def data():\n'
     apppy += '\treturn render_template("data.html", stuff=stuff, title="Data")\n'
+    apppy += 'if __name__ == "__main__":\n'
+    apppy += '\tapp.run(debug=True)\n'
     with open(f'{ PROJECT_SRC }app.py', "a") as h:
         h.write(apppy)
 
